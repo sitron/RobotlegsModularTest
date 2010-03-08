@@ -3,6 +3,7 @@ package com.sitronnier.tests.modules.canvas.views
 	import com.sitronnier.tests.modules.canvas.events.CanvasEvent;
 	import com.sitronnier.tests.modules.canvas.views.components.CanvasView;
 
+	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Mediator;
 
 	/**
@@ -49,6 +50,11 @@ package com.sitronnier.tests.modules.canvas.views
 			eventMap.mapListener(eventDispatcher, CanvasEvent.ON_RESET, _reset);
 			eventMap.mapListener(eventDispatcher, CanvasEvent.ON_SQUARE_REMOVED, _removeSquare);	
 			eventMap.mapListener(view, CanvasEvent.REMOVE_SQUARE, _onRemoveSquareRequest);
-		}	
+		}
+		
+		public function dispose():void
+		{
+			view.dispose();
+		} 	
 	}
 }

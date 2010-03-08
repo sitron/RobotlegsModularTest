@@ -1,5 +1,7 @@
 package com.sitronnier.tests.modules.canvas.views.components 
 {
+	import flash.display.Shape;
+	import flash.events.Event;
 	import com.ericfeminella.collections.HashMap;
 	import com.sitronnier.tests.modules.canvas.events.CanvasEvent;
 	import com.sitronnier.tests.modules.canvas.models.vos.SquareVO;
@@ -13,7 +15,8 @@ package com.sitronnier.tests.modules.canvas.views.components
 	public class CanvasView extends Sprite 
 	{		
 		protected var _squares:HashMap = new HashMap();
-		
+		private var _bg : Shape;
+
 		public function CanvasView()
 		{
 			init();
@@ -25,7 +28,18 @@ package com.sitronnier.tests.modules.canvas.views.components
 
 		private function init() : void 
 		{
-			
+			if (stage == null) addEventListener(Event.ADDED_TO_STAGE, _onAddedToStage);
+			else _onAddedToStage(null);
+		}
+
+		private function _onAddedToStage(event : Event) : void 
+		{
+			if (event != null) removeEventListener(Event.ADDED_TO_STAGE, _onAddedToStage);
+			_bg = new Shape();
+			_bg.graphics.beginFill(0x333333);
+			_bg.graphics.drawRect(0, 0, stage.stageWidth, stage.stageHeight);
+			_bg.graphics.endFill();
+			addChild(_bg);
 		}
 
 		private function _onSquareClick(event : MouseEvent) : void 
@@ -64,5 +78,15 @@ package com.sitronnier.tests.modules.canvas.views.components
 				removeSquare(s.data);	
 			}
 		}  
+		
+		public function dispose():void
+		{
+			removeEventListener(Event.ADDED_TO_STAGE, _onAddedToStage);
+			
+			removeAllSquares();
+			_bg = null;
+			_squares.clear();
+			_squares = null;	
+		} 
 	}
 }

@@ -1,12 +1,10 @@
 package com.sitronnier.tests 
 {
-	import flash.events.Event;
-
-	import com.sitronnier.tests.modules.canvas.CanvasModule;
 	import com.sitronnier.tests.modules.input.InputModule;
 	import com.sitronnier.tests.shell.Shell;
 
 	import flash.display.Sprite;
+	import flash.events.Event;
 
 	/**
 	 * @author sitronnier.com aka laurent prodon
@@ -56,20 +54,13 @@ package com.sitronnier.tests
 		protected function _initApp():void
 		{			
 			// create the shell (which integrates all the modules)
-			_shell = new Shell();
-			addChild(_shell);
+			_shell = new Shell();			
+			addChild(_shell);			
+			_shell.startup();
 			
 			// create the input module (buttons) and start it up
 			var inputModule:InputModule = new InputModule();
-			_shell.addModule(inputModule);
-			
-			// create the canvas module and start it up
-			var canvasModule:CanvasModule = new CanvasModule();
-			_shell.addModule(canvasModule);
-			
-			// add both module to displaylist
-			addChild(canvasModule);
-			addChild(inputModule);			
+			_shell.addModule(inputModule);		
 		}
 	}
 }

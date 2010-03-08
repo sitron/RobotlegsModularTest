@@ -17,6 +17,9 @@ package com.sitronnier.tests.modules.canvas.events
 		public static const ADD_SQUARE : String = "ADD_SQUARE";
 		public static const REMOVE_SQUARE : String = "REMOVE_SQUARE";
 		public static const RESET : String = "RESET";		
+//		public static const DISPOSE : String = "DISPOSE";
+//		public static const DISPOSE_OVER : String = "DISPOSE_OVER";
+		public static const TEST : String = "TEST";
 
 		public var vo:SquareVO;
 

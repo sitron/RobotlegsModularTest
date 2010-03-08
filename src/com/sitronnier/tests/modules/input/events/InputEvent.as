@@ -10,6 +10,7 @@ package com.sitronnier.tests.modules.input.events
 		public static const ADD_SQUARE:String = "ADD_SQUARE";
 		public static const RESET:String = "RESET";
 		public static const ADD_CANVAS : String = "ADD_CANVAS";
+		public static const RESET_ALL : String = "RESET_ALL";
 
 		public function InputEvent(type : String, bubbles : Boolean = false, cancelable : Boolean = false)
 		{

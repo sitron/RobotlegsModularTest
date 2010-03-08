@@ -41,5 +41,17 @@ package com.sitronnier.tests.modules.canvas.models
 			
 			dispatch(new CanvasEvent(CanvasEvent.ON_RESET));
 		}
+		
+		public function dispose():void
+		{
+			_count = 0;
+			_squares.clear();
+			_squares = null;
+		} 
+
+		public function test() : void 
+		{
+			trace("test");
+		}
 	}
 }

@@ -24,7 +24,7 @@ package com.sitronnier.tests.modules.input.controllers
 
 		override public function execute() : void 
 		{
-			// switch is not very nice... maybe better to create a separate command for each event type
+			// switch is not very nice... maybe better to create a separate command for each event type, but for test purpose...
 			switch(event.type)
 			{
 				case InputEvent.ADD_SQUARE:

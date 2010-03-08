@@ -14,6 +14,7 @@ package com.sitronnier.tests.modules.input.views.components
 		public static const RESET : String = "RESET";
 		public static const ADD : String = "ADD";
 		public static const ADD_CANVAS : String = "ADD_CANVAS";
+		public static const RESET_ALL : String = "RESET_ALL";
 
 		public function InputView()
 		{
@@ -26,6 +27,12 @@ package com.sitronnier.tests.modules.input.views.components
 			var addBt:PushButton = new PushButton(vbox, 0, 0, "Add Square", _onAddClick);
 			var resetBt:PushButton = new PushButton(vbox, 0, 0, "Reset", _onResetClick);
 			var addCanvasBt:PushButton = new PushButton(vbox, 0, 0, "Add Canvas", _onAddCanvasClick);
+			var resetAllBt:PushButton = new PushButton(vbox, 0, 0, "Reset All", _onResetAllClick);
+		}
+
+		private function _onResetAllClick(event:MouseEvent) : void 
+		{
+			dispatchEvent(new Event(RESET_ALL));
 		}
 
 		private function _onAddCanvasClick(event:MouseEvent) : void 

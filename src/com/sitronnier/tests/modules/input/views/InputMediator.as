@@ -35,7 +35,12 @@ package com.sitronnier.tests.modules.input.views
 		private function _addCanvas(event:Event) : void 
 		{
 			dispatch(new InputEvent(InputEvent.ADD_CANVAS));
-		}		
+		}	
+
+		private function _resetAll(event:Event) : void 
+		{
+			dispatch(new InputEvent(InputEvent.RESET_ALL));
+		}	
 		
 		// PUBLIC
 		//________________________________________________________________________________________________
@@ -45,6 +50,7 @@ package com.sitronnier.tests.modules.input.views
 			eventMap.mapListener(view, InputView.ADD, _addSquare, Event);
 			eventMap.mapListener(view, InputView.RESET, _reset, Event);
 			eventMap.mapListener(view, InputView.ADD_CANVAS, _addCanvas, Event);
+			eventMap.mapListener(view, InputView.RESET_ALL, _resetAll, Event);
 		}	
 	}
 }

@@ -1,5 +1,6 @@
 package com.sitronnier.tests.shell.events 
 {
+	import org.robotlegs.utilities.modular.mvcs.ModuleContextView;
 	import flash.events.Event;
 
 	/**
@@ -8,6 +9,10 @@ package com.sitronnier.tests.shell.events
 	public class ShellEvent extends Event 
 	{
 		public static const ADD_CANVAS : String = "ADD_CANVAS";
+		public static const ON_NEW_CANVAS : String = "ON_NEW_CANVAS";
+		public static const REMOVE_ALL_CANVAS : String = "REMOVE_ALL_CANVAS";
+
+		public var canvas:ModuleContextView;		
 
 		public function ShellEvent(type : String, bubbles : Boolean = false, cancelable : Boolean = false)
 		{

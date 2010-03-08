@@ -1,5 +1,6 @@
 package com.sitronnier.tests.modules.input 
 {
+	import com.sitronnier.tests.modules.input.controllers.ResetAllCommand;
 	import com.sitronnier.tests.modules.input.controllers.AddCanvasCommand;
 	import com.sitronnier.tests.modules.input.controllers.InputCommand;
 	import com.sitronnier.tests.modules.input.events.InputEvent;
@@ -35,6 +36,7 @@ package com.sitronnier.tests.modules.input
 			commandMap.mapEvent(InputEvent.ADD_SQUARE, InputCommand, InputEvent);
 			commandMap.mapEvent(InputEvent.RESET, InputCommand, InputEvent);
 			commandMap.mapEvent(InputEvent.ADD_CANVAS, AddCanvasCommand, InputEvent);
+			commandMap.mapEvent(InputEvent.RESET_ALL, ResetAllCommand, InputEvent);
 			
 			super.startup();			
 			init();

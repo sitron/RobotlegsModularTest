@@ -1,4 +1,4 @@
- package com.sitronnier.tests.modules.input.controllers 
+package com.sitronnier.tests.modules.input.controllers 
 {
 	import com.sitronnier.tests.shell.events.ShellEvent;
 	import org.robotlegs.utilities.modular.core.IModuleEventDispatcher;
@@ -7,18 +7,18 @@
 	/**
 	 * @author sitronnier.com aka laurent prodon
 	 */
-	public class AddCanvasCommand extends Command 
+	public class ResetAllCommand extends Command 
 	{
 		[Inject]
 		public var moduleDispatcher : IModuleEventDispatcher;
 		
-		public function AddCanvasCommand()
+		public function ResetAllCommand()
 		{
 		}
 
 		override public function execute() : void 
 		{
-			moduleDispatcher.dispatchEvent(new ShellEvent(ShellEvent.ADD_CANVAS));
+			moduleDispatcher.dispatchEvent(new ShellEvent(ShellEvent.REMOVE_ALL_CANVAS));
 		}
 	}
 }
