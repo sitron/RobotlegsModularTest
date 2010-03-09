@@ -12,7 +12,7 @@ package com.sitronnier.tests
 	 * @author sitronnier.com aka laurent prodon
 	 */
 	 
-	[SWF(frameRate="30", width="450", height="350")] 
+	[SWF(frameRate="30", width="450", height="350", backgroundColor="0xe6e6e6")] 
 	public class Main extends Sprite 
 	{
 		private var _shell : Shell;
